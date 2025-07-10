@@ -5,10 +5,7 @@ import (
 	"fmt"
 	"math"
 )
-
 const IMTPower = 2
-
-// Функция вывода результата расчета
 func outputResult(IMT float64) {
 	result := fmt.Sprintf("Ваш индекс массы тела равняется: %.0f ", IMT)
 	fmt.Print(result)
@@ -28,9 +25,6 @@ func outputResult(IMT float64) {
 		fmt.Println("2-я степень ожирения")
 	}
 }
-
-// Функция возврата 1 значений типа флоат64
-// Возврат другого типа
 func calculateIMT(userHeight, userMass float64) (float64, error) {
 	if userHeight <= 0 || userMass <= 0 {
 		return 0, errors.New("NO_PARAMS_ERROR")
@@ -38,8 +32,6 @@ func calculateIMT(userHeight, userMass float64) (float64, error) {
 	IMT := userMass / math.Pow(userHeight/100, IMTPower)
 	return IMT, nil
 }
-
-// Функция возврата 2х значений типа флоат64
 func GetUserInput() (float64, float64) {
 	var userHeight float64
 	var userMass float64
